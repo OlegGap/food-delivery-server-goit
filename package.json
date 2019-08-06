@@ -1,0 +1,24 @@
+{
+  "name": "food-delivery-server-goit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "debug": "node --inspect index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlegGap/food-delivery-server-goit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlegGap/food-delivery-server-goit/issues"
+  },
+  "homepage": "https://github.com/OlegGap/food-delivery-server-goit#readme",
+  "devDependencies": {
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1"
+  }
+}

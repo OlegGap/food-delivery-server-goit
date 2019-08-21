@@ -1,23 +1,25 @@
-const http = require("http"),
-  url = require("url");
-  // morgan = require("morgan"),
-  // router = require("./routers/router"),
-  // logger = require("nodemon");
+const http = require('http');
+const url = require('url');
+
+const morgan = require('morgan');
+const router = require('./routers/router.js');
+
+const logger = morgan('combined');
 
 const startServer = port => {
-  const server = http.createServer((request, response) => {
-debugger
 
-    // const parseUrl = url.parse(request.url);
+    const server = http.createServer((request, response) => {
 
-    // response.end('Hello Node.js Server!');
-    // const func = router[parseUrl.pathname] || router.default;
+        // Get route from the request
+        const parsedUrl = url.parse(request.url);
 
-    // logger(request, response, () => func(request, response));
-    response.end('Hello Node.js Server!');
-  });
+        // Get router function
+        const func = router[parsedUrl.pathname] || router.default;
 
-  server.listen(port);
+        logger(request, response, () => func(request, response));
+    });
+
+    server.listen(port);
 };
 
 module.exports = startServer;

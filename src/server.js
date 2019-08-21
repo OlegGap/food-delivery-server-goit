@@ -18,7 +18,6 @@ const startServer = port => {
 
         logger(request, response, () => func(request, response));
     });
-
     server.listen(port);
 };
 

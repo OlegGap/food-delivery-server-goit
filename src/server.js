@@ -1,6 +1,6 @@
 // const https = require('https');
 const http = require('http');
-const https = require('https');
+// const https = require('https');
 
 const url = require('url');
 
@@ -11,14 +11,13 @@ const logger = morgan('combined');
 const fs = require('fs');
 
 const options = {
-    key: fs.readFileSync('server-key.key', 'utf8'),
-    cert: fs.readFileSync('server-crt.crt', 'utf8')
-    // csr: fs.readFileSync('server.csr').toString()
-};
+    key: fs.readFileSync('server.key', 'utf8'),
+    cert: fs.readFileSync('server.crt', 'utf8')
+}; 
 
 const startServer = (port) => {
 
-    const server = https.createServer(options, (request, response) => {
+    const server = http.createServer((request, response) => {
 
 
         // Get route from the request

@@ -1,5 +1,6 @@
-const https = require('https');
+// const https = require('https');
 const http = require('http');
+const https = require('https');
 
 const url = require('url');
 
@@ -10,17 +11,25 @@ const logger = morgan('combined');
 const fs = require('fs');
 
 const options = {
-        prtkey: fs.readFileSync('server-key.pem', 'utf8'),
-        prtcert: fs.readFileSync('server-crt.pem', 'utf8')
-        // csr: fs.readFileSync('server.csr').toString()
-    };
+    key: fs.readFileSync('server-key.key', 'utf8'),
+    cert: fs.readFileSync('server-crt.crt', 'utf8')
+    // csr: fs.readFileSync('server.csr').toString()
+};
 
 const startServer = (port) => {
-    
-    const server = http.createServer( (request, response) => {
+
+    const server = https.createServer(options, (request, response) => {
+
 
         // Get route from the request
         const parsedUrl = url.parse(request.url);
+
+        const urlArray = parsedUrl.pathname.split('/'); 
+        if (typeof parseInt(urlArray[2]) === 'number' || parsedUrl.query !== null) {
+            request.parsedUrl = parsedUrl;
+            parsedUrl.pathname = '/products';//i
+        }
+
         // Get router function
         const func = router[parsedUrl.pathname] || router.default;
 

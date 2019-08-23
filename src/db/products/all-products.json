@@ -21,5 +21,41 @@
         "created": "21-08-2018",
         "modified": "21-08-2018",
         "categories": ["pizza"]
+    },
+    {
+        "id": 19112833,
+        "sku": 1120002,
+        "name": "water",
+        "description": "just water...",
+        "price": "5",
+        "currency": "UAN",
+        "creatorId": 1,
+        "created": "21-08-2018",
+        "modified": "21-08-2018",
+        "categories": ["drinks"]
+    },
+    {
+        "id": 19112834,
+        "sku": 1120002,
+        "name": "first salad",
+        "description": "just salat...",
+        "price": "55",
+        "currency": "UAN",
+        "creatorId": 1,
+        "created": "21-08-2018",
+        "modified": "21-08-2018",
+        "categories": ["salad"]
+    },
+    {
+        "id": 19112835,
+        "sku": 1120002,
+        "name": "super product",
+        "description": "...",
+        "price": "500",
+        "currency": "UAN",
+        "creatorId": 1,
+        "created": "21-08-2018",
+        "modified": "21-08-2018",
+        "categories": ["drinks","salad","pizza"]
     }
 ]

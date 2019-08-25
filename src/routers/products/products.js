@@ -1,19 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
+const url = require('url');
+
 
 const ProductsRouter = (request, response) => {
-    response.writeHead(200, {
-        'Content-Type': 'application/json',
-    });
 
-    const urlArray = request.parsedUrl.path.split('/');
+    const parsedUrl = url.parse(request.url);
+
+    const urlArray = parsedUrl.path.split('/');
     const filePath = path.join(__dirname, '../../db/products/all-products.json');
     const allFile = JSON.parse(fs.readFileSync(filePath));
     let resultFile = [];
 
-    if (request.parsedUrl.query !== null) {//returned cllection of products by id`s
-        const urlQueryObject = (querystring.parse(request.parsedUrl.query));
+    if (parsedUrl.query !== null) {//returned cllection of products by id`s
+        const urlQueryObject = (querystring.parse(parsedUrl.query));
         if (urlQueryObject.ids !== undefined) {
             const idArray = urlQueryObject.ids.slice(1, -1).split(',');
             resultFile = allFile.filter(product => idArray.find(elementID => {
@@ -27,10 +28,10 @@ const ProductsRouter = (request, response) => {
                         elementCategory == category)
                 ));
         } else {
-            // response.writeHead(400, {
-            //     'Content-Type': 'application/json',
-            // });
-            response.end('You have error on request!');
+            response.writeHead(400, {
+                'Content-Type': 'application/json',
+            });
+            response.end(JSON.stringify({ 'status': 'failed', 'product': [] }));
         }
     } else if (urlArray[2] !== undefined) {//returned one product by id
         resultFile = [];
@@ -51,6 +52,9 @@ const ProductsRouter = (request, response) => {
         }
     }
 
+    response.writeHead(200, {
+        'Content-Type': 'application/json',
+    });
     response.end(JSON.stringify(resultFile));
 };
 

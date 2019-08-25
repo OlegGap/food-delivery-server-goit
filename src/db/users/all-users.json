@@ -1,0 +1,30 @@
+[
+    {
+        "username": "Dima",
+        "telephone": "063 355 57 77",
+        "password": "12345",
+        "email": "1nndsfsd334@gmail.com",
+        "id": "2b87dcb2-d712-4c64-9b05-af575ed26de8"
+    },
+    {
+        "username": "Oleg",
+        "telephone": "063 355 57 77",
+        "password": "12345",
+        "email": "1nndsfsd334@gmail.com",
+        "id": "30f4a090-e9d1-4e64-b4cb-52d396994fbb"
+    },
+    {
+        "username": "Alex",
+        "telephone": "063 355 57 77",
+        "password": "12345",
+        "email": "1nndsfsd334@gmail.com",
+        "id": "b352dd1c-12c5-48e5-b1ca-fa4995ace013"
+    },
+    {
+        "username": "Roman",
+        "telephone": "063 355 57 77",
+        "password": "12345",
+        "email": "1nndsfsd334@gmail.com",
+        "id": "570233b1-8836-4a73-a6c5-caefa303b9a2"
+    }
+]

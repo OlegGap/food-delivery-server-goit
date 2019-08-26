@@ -22,7 +22,9 @@ app.post('/orders', orders);
 
 
 const startServer = (port) => {
-    app.listen(port);
+    app.listen(port, () => {
+        console.log('Server is on ' + port);
+     });
 }
 
 module.exports = startServer;

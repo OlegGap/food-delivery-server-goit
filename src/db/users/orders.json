@@ -23,5 +23,13 @@
         ],
         "deliveryType": "delivery",
         "deliveryAdress": "<deliveryAdressText>"
+    },
+    {
+        "user": "some name",
+        "products": [
+            "Пицца Пепперони с томатами"
+        ],
+        "deliveryType": "delivery",
+        "deliveryAdress": "<deliveryAdressText>"
     }
 ]

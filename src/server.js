@@ -2,27 +2,39 @@ const express = require('express');
 const app = express();
 
 const main = require('./routers/main/main');
-const products = require('./routers/products/products');
-const signUp = require('./routers/users/sign-up');
-const getUserByID = require('./routers/users/getUserByID');
-const orders = require('./routers/users/orders');
+
+const signUp = require('./routers/users/createUser');
+const putUserByID = require('./routers/users/updateUserByID');
+
+const orders = require('./routers/users/createOrder');
+const getOrders = require('./routers/users/getOrdersByID');
+
+const createProduct = require('./routers/products/createProduct');
+const getProducts = require('./routers/products/products');
+const putProducts = require('./routers/products/updateProductByID');
+
 // const addImage = require('./routers/users/addImage');
 
 app.get('/', main);
-app.get('/products', products);
-app.get('/products/:id', products);
+app.post('/products', createProduct);
+app.get('/products/:id', getProducts);
+app.put('/products/:id', putProducts);
 
 app.post('/users', signUp);
-app.get('/users/:id', getUserByID);
+app.put('/users/:id', putUserByID);
    
 app.post('/orders', orders);
+app.get('/orders/:id', getOrders);
+
 
 // app.post('./image', addImage);
 
 
 
 const startServer = (port) => {
-    app.listen(port);
+    app.listen(port, () => {
+        console.log('Server is on ' + port);
+     });
 }
 
 module.exports = startServer;

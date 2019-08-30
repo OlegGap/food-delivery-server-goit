@@ -1,10 +1,7 @@
 const startServer = require("./src/server");
-const { port } = require("./config");
-const fs = require('fs');
 
-// const options = {
-//     key: fs.readFileSync('server.key'),
-//     cert: fs.readFileSync('server.crt')
-// };
+const connectToDB = require('./src/db/connect-db');
+const { port, databaseUrl } = require('./config');
 
 startServer(port);
+connectToDB(databaseUrl);

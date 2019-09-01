@@ -11,7 +11,7 @@ const getOrder = (request, response) => {
       response.status(200);
       response.json(order);
     };
-
+ 
    Order.findById(id)
       .then(sendResponse)
       .catch(err => {

@@ -19,7 +19,7 @@ const createProduct = (request, response) => {
 
       response.json({
         status: 'success',
-        product
+        product 
       });
     };
 

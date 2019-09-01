@@ -13,7 +13,6 @@ const createProduct = require('./routers/products/createProduct');
 const getProducts = require('./routers/products/products');
 const putProducts = require('./routers/products/updateProductByID');
 
-// const addImage = require('./routers/users/addImage');
 
 app.get('/', main);
 app.post('/products', createProduct);
@@ -25,9 +24,6 @@ app.put('/users/:id', putUserByID);
    
 app.post('/orders', orders);
 app.get('/orders/:id', getOrders);
-
-
-// app.post('./image', addImage);
 
 
 

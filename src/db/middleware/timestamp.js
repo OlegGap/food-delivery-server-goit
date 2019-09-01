@@ -1,11 +1,9 @@
-const setTimestamp = (schema) => {
-    // Добавляем к схеме 2 поля
+const setTimestamp = (schema) => {    //add to schema two field, time: create, update
     schema.add({
       createdAt: Date,
       updatedAt: Date
     });
   
-    // Создаем хук на pre-save
     schema.pre('save', function(next) {
       const now = Date.now();
   

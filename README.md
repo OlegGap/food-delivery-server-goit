@@ -17,5 +17,5 @@ npm install
 ```
 ## Development and Deployment
 ```bash
-npm start #Start development
+npm run start #Start development
 ```

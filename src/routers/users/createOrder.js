@@ -1,5 +1,6 @@
 
 const Order = require('../../db/schemas/order');
+const Products = require('../../db/schemas/products');
 const fs = require('fs');
 
 const orders = (request, response) => {
@@ -10,28 +11,42 @@ const orders = (request, response) => {
     });
 
     request.on('end', function () {
+
         let allProducts = fs.readFileSync('./src/db/products/all-products.json');
         allProducts = JSON.parse(allProducts);
 
         body = JSON.parse(body);
 
-        const isRealProducts = body.productsList.every(orderProduct =>
-            allProducts.find(allProduct => orderProduct.product == allProduct.name)
-        );
+
+        //TODO: add check to product is valid 
+
+        // const isRealProducts = body.productsList.reduce((result, orderProduct) => {
+        //     result += Products.findOne({ name: orderProduct.product }, (err, product) => {
+        //         return product;
+        //         // result = product ? true : false;
+        //     });
+        //     console.log(result);
+        //     return result;
+            
+        // }, []
+        // );
+
         //TODO: add check user.id in order!
+        isRealProducts = true;
         if (isRealProducts) {
             const newOrder = new Order(body);
 
             const sendResponse = (newOrder) => {
-                console.log(newOrder);
+                // console.log(newOrder);
 
                 response.json({
                     status: 'success',
                     newOrder
                 });
             };
-            const sendError = (err) => {console.log(err.message);
-            
+            const sendError = (err) => {
+                console.log(err.message);
+
 
                 response.status(400);
                 response.json({

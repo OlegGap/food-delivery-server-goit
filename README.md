@@ -5,6 +5,7 @@ Project on Node.js and framawork Express
 ## Requirements
 - Node.js
 - Express.js
+- Webpack
 - NPM
 ## Installation
 ```bash

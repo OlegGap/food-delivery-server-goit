@@ -36,20 +36,20 @@ You can use the following routers:
 ###### Body:
 ```bash
  {
-  firstName: String,
-  lastName: String,
-  telephone: String,
-  nickName: String,
-  location: String,
-  password: String,
-  email: String,
-  favoriteProducts: [String],
-  viewedProducts: [String],
-  orders: {
-      user: String,
-      products: [String],
-      deliveryType: String,
-      deliveryAdress: String
+  "firstName": String,
+  "lastName": String,
+  "telephone": String,
+  "nickName": String,
+  "location": String,
+  "password": String,
+  "email": String,
+  "favoriteProducts": [String],
+  "viewedProducts": [String],
+  "orders": {
+      "user": String,
+      "products": [String],
+      "deliveryType": String,
+      "deliveryAdress": String
       }
   }
 ```
@@ -66,8 +66,8 @@ You can use the following routers:
 ```bash
  {		
         "sku": Number,
-        "name": "String",
-        "description": "String",
+        "name": String,
+        "description": String,
         "price": Number,
         "currency": "UAN",
         "creatorId": Number

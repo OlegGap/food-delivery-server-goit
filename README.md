@@ -58,7 +58,7 @@ You can use the following routers:
 ```bash
 /users/:id #PUT request #update information about user
 ```
-
+---
 ```bash
 /products #POST request #craeate a new product
 ```
@@ -83,7 +83,7 @@ You can use the following routers:
 ```bash
 /products/:id #PUT request #update information about product
 ```
-
+---
 ```bash
 /orders #POST request #craeate a new order
 ```
@@ -104,7 +104,6 @@ You can use the following routers:
   "status": "inProgress" || "declined" || "finished" || "failed"
  }
 ```
-
 
 ```bash
 /orders/:id #GET request #get order

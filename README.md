@@ -1,6 +1,6 @@
 # Food Delivery server
 
-Project on Node.js and framawork Express 
+Project on Node.js and framework Express 
 
 ## Requirements
 - Node.js

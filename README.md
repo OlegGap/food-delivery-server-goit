@@ -1,6 +1,6 @@
 # Food Delivery server
 
-Project on Node.js and framework Express 
+Project on Node.js (Express.js) using MongoDB
 
 ## Requirements
 - Node.js
